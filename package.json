@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@adiwajshing/baileys": "github:WhiskeySockets/Baileys",
+    "@whiskeysockets/baileys": "github:WhiskeySockets/Baileys",
     "@adiwajshing/keyed-db": "^0.2.4",
     "@types/node": "^18.0.6",
     "axios": "^1.2.2",
