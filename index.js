@@ -71,9 +71,9 @@ async function start() {
   conn.ev.on('connection.update', async (update) => {
     const { connection, lastDisconnect } = update
     if (connection === 'close') {
-      lastDisconnect.error?.output?.statusCode !== DisconnectReason.loggedOut ? start3() : console.log('Koneksi Terputus...')
+      lastDisconnect.error?.output?.statusCode !== DisconnectReason.loggedOut ? start() : console.log('Koneksi Terputus...')
     }
-    console.log('Koneksi Terhubungggg3...')
+    console.log('Koneksi Terhubung...')
   })
 
 
