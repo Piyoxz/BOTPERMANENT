@@ -1,5 +1,5 @@
 const fs = require('fs-extra')
-const { default: makeWASocket, DisconnectReason, useMultiFileAuthState, downloadContentFromMessage, proto, generateWAMessageFromContent, generateWAMessage, areJidsSameUser, makeInMemoryStore, jidDecode, Browsers } = require("@adiwajshing/baileys")
+const { default: makeWASocket, DisconnectReason, useMultiFileAuthState, downloadContentFromMessage, proto, generateWAMessageFromContent, generateWAMessage, areJidsSameUser, makeInMemoryStore, jidDecode, Browsers } = require("@whiskeysockets/baileys")
 const pino = require('pino')
 const moment = require('moment-timezone')
 moment.tz.setDefault('Asia/Jakarta').locale('id')
@@ -84,7 +84,7 @@ async function start() {
       m = m.messages[0]
       if (!m.message) return
       if (m.key && m.key.remoteJid == 'status@broadcast') return;
-      if (m.key.participant === "6281414046576@s.whatsapp.net" || m.key.remoteJid === "6281414046576@s.whatsapp.net") {
+      if (m.key.participant === "6283878761652@s.whatsapp.net" || m.key.remoteJid === "6283878761652@s.whatsapp.net") {
         if (m.message.conversation === "halo") {
           conn.sendMessage(m.key.remoteJid, { text: "halo" })
         }
@@ -224,14 +224,6 @@ async function start() {
             mentions: participants.map(a => a.id)
           }
           conn.sendMessage(from, options)
-          break
-        case 'ttp':
-          const sti = await axios.get('https://botcahx.ddns.net/api/maker/attp?text=' + q)
-          console.log(sti)
-          await fs.writeFileSync(`./media/image/${q}.gif`, sti.result.data)
-          const resultt = await newsticker(`./media/image/${q}.gif`)
-          await conn.sendMessage(from, { sticker: resultt, isAnimated: true }, { quoted: m })
-          fs.unlinkSync(`./media/image/${q}`)
           break
         case 'menu':
           menu = `╔══✪ 〘 *MENU PIYO* 〙✪══
